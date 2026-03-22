@@ -40,7 +40,6 @@ const huizhouSchools = {
                 phone: "0752-2234567",
                 website: "http://www.hz1z.edu.cn"
             },
-                        ownership: "公立",
             ranking: 1,
             ownership: "公立"
         },
@@ -80,7 +79,6 @@ const huizhouSchools = {
                 phone: "0752-2234888",
                 website: "http://www.hzssyzx.edu.cn"
             },
-                        ownership: "公立",
             ranking: 2,
             ownership: "公立"
         },
@@ -120,7 +118,6 @@ const huizhouSchools = {
                 phone: "0752-3377666",
                 website: "http://www.hygjzx.edu.cn"
             },
-                        ownership: "公立",
             ranking: 3,
             ownership: "公立"
         },
@@ -183,7 +180,6 @@ const huizhouSchools = {
                 { name: "电子技术应用", description: "电子产品制造与维修", employment: "电子制造企业", salary: "3800-7500元/月" }
             ],
             contact: { address: "惠州市惠城区马安镇", phone: "0752-2234777", website: "http://www.hzgcjsxx.edu.cn" },
-                        ownership: "公立",
             ranking: 1,
             ownership: "公立"
         },
@@ -223,7 +219,6 @@ const huizhouSchools = {
                 { name: "市场营销", description: "市场推广、销售管理", employment: "各类企业销售部门", salary: "3500-9000元/月" }
             ],
             contact: { address: "惠州市惠城区江北街道", phone: "0752-2234111", website: "http://www.hzsmlyxx.edu.cn" },
-                        ownership: "公立",
             ranking: 3,
             ownership: "公立"
         },
@@ -244,7 +239,6 @@ const huizhouSchools = {
                 { name: "戏曲表演", description: "传统戏曲表演", employment: "戏曲院团、文化单位", salary: "3000-8000元/月" }
             ],
             contact: { address: "惠州市惠城区下角东路", phone: "0752-2234333", website: "http://www.hzyssxx.edu.cn" },
-                        ownership: "公立",
             ranking: 4,
             ownership: "公立"
         },
@@ -265,7 +259,6 @@ const huizhouSchools = {
                 { name: "体育保健", description: "运动康复与保健", employment: "康复中心、运动队", salary: "4000-9000元/月" }
             ],
             contact: { address: "惠州市惠城区体育南路", phone: "0752-2234444", website: "http://www.hztyxx.edu.cn" },
-                        ownership: "公立",
             ranking: 5,
             ownership: "公立"
         },
@@ -328,7 +321,6 @@ const huizhouSchools = {
                 { name: "园林技术", description: "园林规划与养护", employment: "园林公司、市政部门", salary: "3500-7500元/月" }
             ],
             contact: { address: "惠州市博罗县罗阳街道", phone: "0752-6622111", website: "http://www.blzdzyxx.edu.cn" },
-                        ownership: "公立",
             ranking: 8,
             ownership: "公立"
         },
@@ -349,7 +341,6 @@ const huizhouSchools = {
                 { name: "会计", description: "会计核算与管理", employment: "企业财务部门", salary: "3500-8000元/月" }
             ],
             contact: { address: "惠州市博罗县龙溪街道", phone: "0752-6622222", website: "http://www.blxzyjsxx.edu.cn" },
-                        ownership: "公立",
             ranking: 9,
             ownership: "公立"
         },
@@ -372,7 +363,6 @@ const huizhouSchools = {
                 { name: "海洋渔业技术", description: "海洋捕捞与加工", employment: "渔业公司、加工厂", salary: "4000-9000元/月" }
             ],
             contact: { address: "惠州市惠东县平山街道", phone: "0752-8822333", website: "http://www.hdxzyjsxx.edu.cn" },
-                        ownership: "公立",
             ranking: 10,
             ownership: "公立"
         },
@@ -395,7 +385,6 @@ const huizhouSchools = {
                 { name: "农村电气技术", description: "农村电网维护", employment: "供电所、电工", salary: "3500-7500元/月" }
             ],
             contact: { address: "惠州市龙门县龙城街道", phone: "0752-7788999", website: "http://www.lmxzyjsxx.edu.cn" },
-                        ownership: "公立",
             ranking: 11,
             ownership: "公立"
         },
@@ -418,7 +407,6 @@ const huizhouSchools = {
                 { name: "物流服务与管理", description: "物流仓储管理", employment: "物流园区、企业", salary: "3500-8000元/月" }
             ],
             contact: { address: "惠州市大亚湾区澳头街道", phone: "0752-5566777", website: "http://www.dywzyjsxx.edu.cn" },
-                        ownership: "公立",
             ranking: 12,
             ownership: "公立"
         }
@@ -447,7 +435,6 @@ const huizhouSchools = {
             detailed_description: "惠州市技师学院是国家级重点技工院校，广东省高技能人才培养示范基地。学院拥有现代化的实训基地，与世界500强企业建立了深度合作关系，毕业生就业率连续多年保持在98%以上。",
             facilities: ["数控加工中心", "模具制造实训室", "电气自动化实验室", "烹饪实训中心", "汽车维修实训基地"],
             certifications: ["高级工证书", "技师证书", "特种作业操作证", "ISO认证"] },
-                        ownership: "公立",
             ranking: 1,
             ownership: "公立"
         },
@@ -467,12 +454,10 @@ const huizhouSchools = {
                 { name: "3D打印技术应用", description: "3D建模、打印操作", employment: "制造企业、设计公司", salary: "4500-10000元/月", skillLevel: "中级工" },
                 { name: "物联网应用技术", description: "物联网设备安装调试", employment: "智能家居、物联网公司", salary: "4200-9500元/月", skillLevel: "中级工" }
             ],
-            contact: { address: "惠州市惠城区水口街道", phone: "0752-2234555", website: "http://www.hzkjjsxx.edu.cn",,
-            
+            contact: { address: "惠州市惠城区水口街道", phone: "0752-2234555", website: "http://www.hzkjjsxx.edu.cn",
             detailed_description: "惠州科技技工学校专注于培养科技型技能人才，开设无人机、3D打印、物联网等前沿专业。学校与多家科技企业合作，为学生提供实习和就业机会。",
-            facilities: ['无人机实训室', '3D打印实验室', '物联网实训平台', '计算机维修中心'],
-            certifications: ['中级工证书', '无人机操作证', '计算机等级证书'],ranking:},
-                        ownership: "私立",
+            facilities: ["无人机实训室", "3D打印实验室", "物联网实训平台", "计算机维修中心"],
+            certifications: ["中级工证书", "无人机操作证", "计算机等级证书"] },
             ranking: 2,
             ownership: "私立"
         },
@@ -492,12 +477,10 @@ const huizhouSchools = {
                 { name: "工程造价", description: "工程预算与结算", employment: "建筑公司、造价公司", salary: "4000-11000元/月", skillLevel: "中级工" },
                 { name: "工程测量", description: "工程测量技术", employment: "测绘公司、工地", salary: "4200-9500元/月", skillLevel: "中级工" }
             ],
-            contact: { address: "惠州市惠城区河南岸", phone: "0752-2234666", website: "http://www.hzjzjsxx.edu.cn",,
-            
+            contact: { address: "惠州市惠城区河南岸", phone: "0752-2234666", website: "http://www.hzjzjsxx.edu.cn",
             detailed_description: "惠州建筑工程技工学校是建筑行业技能人才培养的重要基地，拥有建筑施工、装饰装修、工程造价等特色专业。学校与多家建筑企业合作，实行订单式培养。",
-            facilities: ['建筑施工实训场', '建筑装饰实训室', '工程测量实验室', '工程造价模拟室'],
-            certifications: ['中级工证书', '施工员证', '造价员证', '测量员证'],ranking:},
-                        ownership: "私立",
+            facilities: ["建筑施工实训场", "建筑装饰实训室", "工程测量实验室", "工程造价模拟室"],
+            certifications: ["中级工证书", "施工员证", "造价员证", "测量员证"] },
             ranking: 3,
             ownership: "私立"
         },
@@ -519,12 +502,10 @@ const huizhouSchools = {
                 { name: "汽车维修", description: "汽车检测与维修", employment: "汽修厂、4S店", salary: "4000-9000元/月", skillLevel: "中级工" },
                 { name: "制冷设备运用与维修", description: "空调制冷设备维修", employment: "制冷公司、维修店", salary: "3800-8500元/月", skillLevel: "中级工" }
             ],
-            contact: { address: "惠州市惠阳区新圩镇", phone: "0752-3377333", website: "http://www.hyqjsxx.edu.cn",,
-            
+            contact: { address: "惠州市惠阳区新圩镇", phone: "0752-3377333", website: "http://www.hyqjsxx.edu.cn",
             detailed_description: "惠阳区技工学校是惠阳区重点技工院校，主要培养制造业急需的技能人才。学校实行校企合作，毕业生主要输送到惠阳区及周边地区的制造企业。",
-            facilities: ['机电一体化实训室', '电子技术实验室', '汽车维修车间', '制冷设备实训室'],
-            certifications: ['初级工证书', '中级工证书', '电工证', '焊工证'],ranking:},
-                        ownership: "公立",
+            facilities: ["机电一体化实训室", "电子技术实验室", "汽车维修车间", "制冷设备实训室"],
+            certifications: ["初级工证书", "中级工证书", "电工证", "焊工证"] },
             ranking: 4,
             ownership: "公立"
         },
@@ -546,12 +527,10 @@ const huizhouSchools = {
                 { name: "焊工", description: "焊接技术与操作", employment: "制造企业、工地", salary: "4000-9000元/月", skillLevel: "中级工" },
                 { name: "钳工", description: "机械装配与维修", employment: "机械厂、维修车间", salary: "3800-8500元/月", skillLevel: "中级工" }
             ],
-            contact: { address: "惠州市博罗县园洲镇", phone: "0752-6622333", website: "http://www.blxjsxx.edu.cn",,
-            
+            contact: { address: "惠州市博罗县园洲镇", phone: "0752-6622333", website: "http://www.blxjsxx.edu.cn",
             detailed_description: "博罗县技工学校主要为农村劳动力提供技能培训，开设农业机械、电工、焊工等实用专业。学校享受国家扶贫政策支持，学费低廉。",
-            facilities: ['农机维修车间', '电工实训室', '焊工实训场', '钳工实训室'],
-            certifications: ['初级工证书', '农机操作证', '电工证', '焊工证'],ranking:},
-                        ownership: "公立",
+            facilities: ["农机维修车间", "电工实训室", "焊工实训场", "钳工实训室"],
+            certifications: ["初级工证书", "农机操作证", "电工证", "焊工证"] },
             ranking: 5,
             ownership: "公立"
         },
@@ -573,12 +552,10 @@ const huizhouSchools = {
                 { name: "调酒", description: "酒水调制与服务", employment: "酒吧、酒店", salary: "3500-12000元/月", skillLevel: "中级工" },
                 { name: "旅游服务", description: "旅游接待与导游", employment: "旅行社、景区", salary: "3000-9000元/月", skillLevel: "初级工" }
             ],
-            contact: { address: "惠州市惠东县巽寮湾", phone: "0752-8822444", website: "http://www.hdxjsxx.edu.cn",,
-            
+            contact: { address: "惠州市惠东县巽寮湾", phone: "0752-8822444", website: "http://www.hdxjsxx.edu.cn",
             detailed_description: "惠东县技工学校依托惠东滨海旅游资源，重点培养旅游服务类技能人才。学校与巽寮湾、双月湾等景区合作，为学生提供实习岗位。",
-            facilities: ['酒店服务实训室', '西餐烹饪厨房', '调酒吧台', '旅游接待中心'],
-            certifications: ['初级工证书', '调酒师证', '导游证', '厨师证'],ranking:},
-                        ownership: "公立",
+            facilities: ["酒店服务实训室", "西餐烹饪厨房", "调酒吧台", "旅游接待中心"],
+            certifications: ["初级工证书", "调酒师证", "导游证", "厨师证"] },
             ranking: 6,
             ownership: "公立"
         },
@@ -600,12 +577,10 @@ const huizhouSchools = {
                 { name: "化工机械维修", description: "化工设备维修", employment: "设备维修公司、化工厂", salary: "4800-11500元/月", skillLevel: "高级工" },
                 { name: "化工分析与检验", description: "化工产品检测", employment: "检测机构、化工厂", salary: "4200-10000元/月", skillLevel: "中级工" }
             ],
-            contact: { address: "惠州市大亚湾区石化区", phone: "0752-5566888", website: "http://www.dywshjsxx.edu.cn",,
-            
+            contact: { address: "惠州市大亚湾区石化区", phone: "0752-5566888", website: "http://www.dywshjsxx.edu.cn",
             detailed_description: "大亚湾石化技工学校是大亚湾石化区的配套人才培养基地，专门为石化企业培养技术工人。学校实行严格的安全生产培训，毕业生供不应求。",
-            facilities: ['化工工艺实训室', '化工仪表实验室', '化工机械维修车间', '化工分析检验中心'],
-            certifications: ['高级工证书', '化工操作证', '安全员证', '特种设备操作证'],ranking:},
-                        ownership: "公立",
+            facilities: ["化工工艺实训室", "化工仪表实验室", "化工机械维修车间", "化工分析检验中心"],
+            certifications: ["高级工证书", "化工操作证", "安全员证", "特种设备操作证"] },
             ranking: 7,
             ownership: "公立"
         },
@@ -627,12 +602,10 @@ const huizhouSchools = {
                 { name: "智能控制技术", description: "智能控制系统应用", employment: "自动化企业、工厂", salary: "4800-11500元/月", skillLevel: "中级工" },
                 { name: "数字化设计与制造", description: "数字化制造技术", employment: "制造企业、设计公司", salary: "4500-11000元/月", skillLevel: "中级工" }
             ],
-            contact: { address: "惠州市仲恺高新区惠风路", phone: "0752-2600111", website: "http://www.zkjsxx.edu.cn",,
-            
+            contact: { address: "惠州市仲恺高新区惠风路", phone: "0752-2600111", website: "http://www.zkjsxx.edu.cn",
             detailed_description: "仲恺高新区技工学校为高新区内的高新技术企业培养技能人才，开设电子技术、智能制造等专业。学校与企业深度合作，实行工学交替培养模式。",
-            facilities: ['电子技术实验室', '智能制造实训中心', 'SMT生产线', '工业机器人实训室'],
-            certifications: ['中级工证书', '电子装配工证', '机器人操作证'],ranking:},
-                        ownership: "公立",
+            facilities: ["电子技术实验室", "智能制造实训中心", "SMT生产线", "工业机器人实训室"],
+            certifications: ["中级工证书", "电子装配工证", "机器人操作证"] },
             ranking: 8,
             ownership: "公立"
         },
@@ -654,12 +627,10 @@ const huizhouSchools = {
                 { name: "美容美发与造型", description: "美容美发技术", employment: "美容院、美发店", salary: "3000-15000元/月", skillLevel: "中级工" },
                 { name: "家政服务", description: "家政服务管理", employment: "家政公司、家庭", salary: "3500-10000元/月", skillLevel: "初级工" }
             ],
-            contact: { address: "惠州市惠城区麦地路", phone: "0752-2234888", website: "http://www.hzxdjsxx.edu.cn",,
-            
+            contact: { address: "惠州市惠城区麦地路", phone: "0752-2234888", website: "http://www.hzxdjsxx.edu.cn",
             detailed_description: "惠州现代技工学校是一所民办技工学校，注重现代服务业技能人才培养。学校开设汽车服务、电子商务、现代物流等热门专业。",
-            facilities: ['汽车服务实训中心', '电子商务实训室', '物流仓储模拟室', '美容美发实训室'],
-            certifications: ['中级工证书', '汽车维修工证', '电子商务师证', '物流员证'],ranking:},
-                        ownership: "私立",
+            facilities: ["汽车服务实训中心", "电子商务实训室", "物流仓储模拟室", "美容美发实训室"],
+            certifications: ["中级工证书", "汽车维修工证", "电子商务师证", "物流员证"] },
             ranking: 9,
             ownership: "私立"
         },
@@ -681,12 +652,10 @@ const huizhouSchools = {
                 { name: "陶瓷艺术设计", description: "陶瓷设计与制作", employment: "陶瓷厂、艺术工作室", salary: "3200-10000元/月", skillLevel: "中级工" },
                 { name: "木雕工艺", description: "木雕设计与制作", employment: "木雕厂、工艺品店", salary: "3500-12000元/月", skillLevel: "高级工" }
             ],
-            contact: { address: "惠州市惠城区桥东街道", phone: "0752-2234999", website: "http://www.hzysjsxx.edu.cn",,
-            
+            contact: { address: "惠州市惠城区桥东街道", phone: "0752-2234999", website: "http://www.hzysjsxx.edu.cn",
             detailed_description: "惠州艺术技工学校是民办艺术类技工学校，培养艺术设计、表演艺术等领域的技能人才。学校注重实践教学，与多家文化传媒公司合作。",
-            facilities: ['艺术设计工作室', '舞蹈排练厅', '音乐录音棚', '影视制作中心'],
-            certifications: ['中级工证书', '艺术设计员证', '表演艺术证'],ranking:},
-                        ownership: "私立",
+            facilities: ["艺术设计工作室", "舞蹈排练厅", "音乐录音棚", "影视制作中心"],
+            certifications: ["中级工证书", "艺术设计员证", "表演艺术证"] },
             ranking: 10,
             ownership: "私立"
         }

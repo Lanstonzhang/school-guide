@@ -806,11 +806,17 @@ function createSchoolCard(school, type) {
     const featuresPreview = school.features.slice(0, 3);
     const specialtiesPreview = school.specialties.slice(0, 3);
     
+    // 确定公立/私立标识的颜色
+    const ownershipColor = school.ownership === '公立' ? '#10b981' : '#f59e0b';
+    
     card.innerHTML = `
         <div class="school-card-header">
             <div class="school-card-title">
                 <h3>${school.name}</h3>
-                <span class="school-rank">第${school.ranking}名</span>
+                <div class="school-header-tags">
+                    <span class="school-rank">第${school.ranking}名</span>
+                    <span class="school-ownership" style="background: ${ownershipColor}">${school.ownership}</span>
+                </div>
             </div>
             <div>
                 <span class="school-type">${school.type}</span>
@@ -926,6 +932,10 @@ function createSchoolDetailsHTML(school, type) {
                     <span class="info-value">${school.location}</span>
                 </div>
                 <div class="info-item">
+                    <span class="info-label">学校性质</span>
+                    <span class="info-value" style="color: ${school.ownership === '公立' ? '#10b981' : '#f59e0b'}; font-weight: bold;">${school.ownership}</span>
+                </div>
+                <div class="info-item">
                     <span class="info-label">建校时间</span>
                     <span class="info-value">${school.established}年</span>
                 </div>
@@ -999,6 +1009,31 @@ function createSchoolDetailsHTML(school, type) {
                 </tbody>
             </table>
         </div>
+        
+        ${school.detailed_description ? `
+        <div class="modal-section">
+            <h4><i class="fas fa-file-alt"></i> 学校详细介绍</h4>
+            <p class="detailed-description">${school.detailed_description}</p>
+            
+            ${school.facilities ? `
+            <div class="facilities-section">
+                <h5><i class="fas fa-building"></i> 主要实训设施</h5>
+                <div class="facilities-tags">
+                    ${school.facilities.map(facility => `<span class="facility-tag">${facility}</span>`).join('')}
+                </div>
+            </div>
+            ` : ''}
+            
+            ${school.certifications ? `
+            <div class="certifications-section">
+                <h5><i class="fas fa-certificate"></i> 可获取证书</h5>
+                <div class="certifications-tags">
+                    ${school.certifications.map(cert => `<span class="certification-tag">${cert}</span>`).join('')}
+                </div>
+            </div>
+            ` : ''}
+        </div>
+        ` : ''}
         
         <div class="modal-section">
             <h4><i class="fas fa-address-book"></i> 联系方式</h4>
