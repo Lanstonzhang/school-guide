@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>惠州学校数据库测试</title>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+            background: #f8fafc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        .stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .stat {
+            padding: 1rem;
+            background: #f0f9ff;
+            border-radius: 0.75rem;
+            min-width: 150px;
+        }
+        .stat h3 {
+            color: #3b82f6;
+            margin: 0;
+            font-size: 2rem;
+        }
+        .stat p {
+            color: #64748b;
+            margin: 0.25rem 0 0;
+        }
+        .school-list {
+            display: grid;
+            gap: 1rem;
+        }
+        .school {
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            background: #f8fafc;
+        }
+        .school h3 {
+            color: #1e293b;
+            margin: 0 0 0.5rem;
+        }
+        .school .type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #e0f2fe;
+            color: #0369a1;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+        .school .location {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #f0f9ff;
+            color: #475569;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+        }
+        .features {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+        .features ul {
+            margin: 0.5rem 0 0;
+            padding-left: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>惠州职业学校数据库测试</h1>
+        
+        <div class="stats">
+            <div class="stat">
+                <h3>22</h3>
+                <p>所职业学校</p>
+            </div>
+            <div class="stat">
+                <h3>12</h3>
+                <p>所中专/职高</p>
+            </div>
+            <div class="stat">
+                <h3>10</h3>
+                <p>所技工学校</p>
+            </div>
+            <div class="stat">
+                <h3>7</h3>
+                <p>个县区覆盖</p>
+            </div>
+        </div>
+        
+        <h2>学校分布</h2>
+        <div class="school-list">
+            <!-- 惠城区 -->
+            <div class="school">
+                <h3>惠城区 (7所)</h3>
+                <span class="type">中专/职高</span>
+                <span class="location">核心区域</span>
+                <div class="features">
+                    <ul>
+                        <li>惠州工程技术学校</li>
+                        <li>惠州卫生职业技术学院（中职部）</li>
+                        <li>惠州商贸旅游学校</li>
+                        <li>惠州艺术学校</li>
+                        <li>惠州体育运动学校</li>
+                    </ul>
+                </div>
+                <div class="features">
+                    <span class="type">技工学校</span>
+                    <ul>
+                        <li>惠州市技师学院</li>
+                        <li>惠州科技技工学校</li>
+                        <li>惠州建筑工程技工学校</li>
+                        <li>惠州现代技工学校</li>
+                        <li>惠州艺术技工学校</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 惠阳区 -->
+            <div class="school">
+                <h3>惠阳区 (3所)</h3>
+                <span class="type">中专/职高</span>
+                <span class="location">副中心区域</span>
+                <div class="features">
+                    <ul>
+                        <li>惠阳职业技术学校</li>
+                        <li>惠阳商贸学校</li>
+                    </ul>
+                </div>
+                <div class="features">
+                    <span class="type">技工学校</span>
+                    <ul>
+                        <li>惠阳区技工学校</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 博罗县 -->
+            <div class="school">
+                <h3>博罗县 (2所)</h3>
+                <span class="type">中专/职高</span>
+                <span class="location">县域经济</span>
+                <div class="features">
+                    <ul>
+                        <li>博罗中等专业学校</li>
+                        <li>博罗县职业技术学校</li>
+                    </ul>
+                </div>
+                <div class="features">
+                    <span class="type">技工学校</span>
+                    <ul>
+                        <li>博罗县技工学校</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 惠东县 -->
+            <div class="school">
+                <h3>惠东县 (2所)</h3>
+                <span class="type">中专/职高</span>
+                <span class="location">滨海特色</span>
+                <div class="features">
+                    <ul>
+                        <li>惠东县职业技术学校</li>
+                    </ul>
+                </div>
+                <div class="features">
+                    <span class="type">技工学校</span>
+                    <ul>
+                        <li>惠东县技工学校</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 龙门县 -->
+            <div class="school">
+                <h3>龙门县 (1所)</h3>
+                <span class="type">中专/职高</span>
+                <span class="location">山区特色</span>
+                <div class="features">
+                    <ul>
+                        <li>龙门县职业技术学校</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 大亚湾区 -->
+            <div class="school">
+                <h3>大亚湾区 (2所)</h3>
+                <span class="type">中专/职高</span>
+                <span class="location">临港工业</span>
+                <div class="features">
+                    <ul>
+                        <li>大亚湾职业技术学校</li>
+                    </ul>
+                </div>
+                <div class="features">
+                    <span class="type">技工学校</span>
+                    <ul>
+                        <li>大亚湾石化技工学校</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 仲恺高新区 -->
+            <div class="school">
+                <h3>仲恺高新区 (1所)</h3>
+                <span class="type">技工学校</span>
+                <span class="location">高新技术</span>
+                <div class="features">
+                    <ul>
+                        <li>仲恺高新区技工学校</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem; padding: 1rem; background: #fef3c7; border-radius: 0.75rem;">
+            <h3>功能说明</h3>
+            <ul>
+                <li>完整覆盖惠州市所有县区（7个县区）</li>
+                <li>包含12所中专/职高学校，10所技工学校</li>
+                <li>每所学校包含：分数要求、特色专业、优劣势分析、联系方式</li>
+                <li>支持按类型、区域、分数筛选</li>
+                <li>支持查看学校详情（点击查看详情按钮）</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="index.html" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; text-decoration: none; border-radius: 0.75rem; display: inline-block;">
+                返回主页面
+            </a>
+        </div>
+    </div>
+</body>
+</html>

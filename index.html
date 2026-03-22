@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>惠州中考择校指南 - 选择最适合你的教育路径</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+</head>
+<body>
+    <!-- 简洁导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">惠州择校</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">首页</a>
+                <a href="#choices" class="nav-link">选择路径</a>
+                <a href="#compare" class="nav-link">对比分析</a>
+                <a href="#screening" class="nav-link">智能筛选</a>
+                <a href="#schools" class="nav-link">惠州学校</a>
+            </div>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 简洁首页 -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <h1 class="hero-title">惠州中考择校指南</h1>
+                <p class="hero-subtitle">为你的未来选择最合适的教育路径</p>
+                <p class="hero-desc">了解惠州本地高中、中专、职高的特点，<br>通过智能筛选找到最适合你的学校</p>
+                <div class="hero-actions">
+                    <a href="#screening" class="btn-primary">
+                        <i class="fas fa-magic"></i> 开始智能筛选
+                    </a>
+                    <a href="#choices" class="btn-secondary">
+                        <i class="fas fa-book-open"></i> 了解选择路径
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <div class="card-icon">🏫</div>
+                    <h3>普通高中</h3>
+                    <p>学术导向，考大学</p>
+                </div>
+                <div class="visual-card">
+                    <div class="card-icon">🔧</div>
+                    <h3>中专/职高</h3>
+                    <p>技能导向，早就业</p>
+                </div>
+                <div class="visual-card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>技工学校</h3>
+                    <p>技术导向，精技能</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 简洁选择路径 -->
+    <section id="choices" class="choices-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">三种教育路径</h2>
+                <p class="section-subtitle">根据你的特点和目标选择最适合的路径</p>
+            </div>
+            
+            <div class="choices-grid">
+                <!-- 高中路径 -->
+                <div class="choice-card">
+                    <div class="card-header">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>普通高中</h3>
+                        <span class="card-tag">学术路径</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-point">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                            <span>通过高考进入大学</span>
+                        </div>
+                        <div class="card-point">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                            <span>学历认可度高</span>
+                        </div>
+                        <div class="card-point">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                            <span>就业选择广泛</span>
+                        </div>
+                        
+                        <div class="card-requirement">
+                            <h4>分数要求</h4>
+                            <div class="score-range">
+                                <span class="score-min">550分</span>
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 85%;"></div>
+                                </div>
+                                <span class="score-max">650分+</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-tip">
+                            <i class="fas fa-lightbulb" style="color: #f59e0b;"></i>
+                            <span>适合学术能力强、计划读大学的学生</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 中专/职高路径 -->
+                <div class="choice-card">
+                    <div class="card-header">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>中专/职高</h3>
+                        <span class="card-tag">技能路径</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-point">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                            <span>学习实用技能</span>
+                        </div>
+                        <div class="card-point">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                            <span>就业竞争力强</span>
+                        </div>
+                        <div class="card-point">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                            <span>可对口升学</span>
+                        </div>
+                        
+                        <div class="card-requirement">
+                            <h4>分数要求</h4>
+                            <div class="score-range">
+                                <span class="score-min">400分</span>
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 60%;"></div>
+                                </div>
+                                <span class="score-max">550分</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-tip">
+                            <i class="fas fa-lightbulb" style="color: #f59e0b;"></i>
+                            <span>适合动手能力强、想早就业的学生</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 技校路径 -->
+                <div class="choice-card">
+                    <div class="card-header">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>技工学校</h3>
+                        <span class="card-tag">技术路径</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-point">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                            <span>技术实用性强</span>
+                        </div>
+                        <div class="card-point">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                            <span>就业率高</span>
+                        </div>
+                        <div class="card-point">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                            <span>国家补贴多</span>
+                        </div>
+                        
+                        <div class="card-requirement">
+                            <h4>分数要求</h4>
+                            <div class="score-range">
+                                <span class="score-min">300分</span>
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 40%;"></div>
+                                </div>
+                                <span class="score-max">450分</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-tip">
+                            <i class="fas fa-lightbulb" style="color: #f59e0b;"></i>
+                            <span>适合喜欢技术操作、动手能力强的学生</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 简洁对比分析 -->
+    <section id="compare" class="compare-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">路径对比</h2>
+                <p class="section-subtitle">三种教育路径的快速对比</p>
+            </div>
+            
+            <div class="compare-table">
+                <div class="table-header">
+                    <div class="table-cell">对比项目</div>
+                    <div class="table-cell">普通高中</div>
+                    <div class="table-cell">中专/职高</div>
+                    <div class="table-cell">技工学校</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">主要目标</div>
+                    <div class="table-cell">考大学</div>
+                    <div class="table-cell">技能就业</div>
+                    <div class="table-cell">技术就业</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">学习年限</div>
+                    <div class="table-cell">3年</div>
+                    <div class="table-cell">3年</div>
+                    <div class="table-cell">2-3年</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">分数要求</div>
+                    <div class="table-cell">550-650+</div>
+                    <div class="table-cell">400-550</div>
+                    <div class="table-cell">300-450</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">升学途径</div>
+                    <div class="table-cell">高考</div>
+                    <div class="table-cell">对口升学</div>
+                    <div class="table-cell">技能高考</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">适合人群</div>
+                    <div class="table-cell">学术型</div>
+                    <div class="table-cell">实践型</div>
+                    <div class="table-cell">技术型</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 简洁智能筛选 -->
+    <section id="screening" class="screening-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">智能筛选</h2>
+                <p class="section-subtitle">根据你的情况推荐最适合的路径</p>
+            </div>
+            
+            <div class="screening-card">
+                <div class="screening-form">
+                    <div class="form-group">
+                        <label for="score">
+                            <i class="fas fa-chart-line"></i>
+                            你的中考分数
+                        </label>
+                        <div class="score-input">
+                            <input type="range" id="score" min="300" max="700" value="500">
+                            <div class="score-display">
+                                <span id="score-value">500</span> 分
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">
+                            <i class="fas fa-heart"></i>
+                            你的兴趣方向
+                        </label>
+                        <div class="interest-buttons">
+                            <button class="interest-btn" data-value="academic">
+                                <i class="fas fa-book"></i> 学术理论
+                            </button>
+                            <button class="interest-btn" data-value="skill">
+                                <i class="fas fa-hammer"></i> 技能操作
+                            </button>
+                            <button class="interest-btn" data-value="tech">
+                                <i class="fas fa-cog"></i> 技术实践
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="plan">
+                            <i class="fas fa-flag"></i>
+                            未来规划
+                        </label>
+                        <div class="plan-buttons">
+                            <button class="plan-btn" data-value="university">
+                                <i class="fas fa-graduation-cap"></i> 读大学
+                            </button>
+                            <button class="plan-btn" data-value="job">
+                                <i class="fas fa-briefcase"></i> 早就业
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button id="analyze-btn" class="analyze-btn">
+                        <i class="fas fa-brain"></i> 开始分析推荐
+                    </button>
+                </div>
+                
+                <div id="result-panel" class="result-panel hidden">
+                    <div class="result-header">
+                        <h3>推荐结果</h3>
+                        <div class="match-score">
+                            匹配度: <span id="match-percent">0</span>%
+                        </div>
+                    </div>
+                    
+                    <div class="result-content">
+                        <div class="recommended-choice">
+                            <div id="recommend-icon" class="rec-icon">🎓</div>
+                            <h4 id="recommend-title">普通高中</h4>
+                            <p id="recommend-desc">最适合你的教育路径</p>
+                        </div>
+                        
+                        <div class="reason-list">
+                            <h5>推荐理由</h5>
+                            <ul id="reason-list">
+                                <!-- 理由将动态添加 -->
+                            </ul>
+                        </div>
+                        
+                        <div class="result-actions">
+                            <button id="reset-btn" class="btn-secondary">
+                                <i class="fas fa-redo"></i> 重新筛选
+                            </button>
+                            <button id="detail-btn" class="btn-primary">
+                                <i class="fas fa-info-circle"></i> 查看详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 惠州学校推荐 -->
+    <section id="schools" class="schools-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">惠州学校数据库</h2>
+                <p class="section-subtitle">包含惠州全市22所中专/职高/技工学校的详细信息，覆盖所有县区</p>
+                <div class="schools-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="total-schools">22</span>
+                        <span class="stat-label">所职业学校</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">所中专/职高</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">所技工学校</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学校筛选器 -->
+            <div class="school-filter">
+                <div class="filter-group">
+                    <label for="school-type">
+                        <i class="fas fa-school"></i>
+                        学校类型
+                    </label>
+                    <select id="school-type" class="filter-select">
+                        <option value="all">全部类型</option>
+                        <option value="high-school">普通高中</option>
+                        <option value="vocational">中专/职高</option>
+                        <option value="technical">技工学校</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="school-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        所在区域
+                    </label>
+                    <select id="school-location" class="filter-select">
+                        <option value="all">全部区域</option>
+                        <option value="惠城区">惠城区</option>
+                        <option value="惠阳区">惠阳区</option>
+                        <option value="博罗县">博罗县</option>
+                        <option value="惠东县">惠东县</option>
+                        <option value="龙门县">龙门县</option>
+                        <option value="大亚湾区">大亚湾区</option>
+                        <option value="仲恺高新区">仲恺高新区</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="score-range">
+                        <i class="fas fa-chart-line"></i>
+                        分数要求
+                    </label>
+                    <div class="score-range-input">
+                        <input type="range" id="score-range" min="300" max="700" value="500">
+                        <div class="score-range-display">
+                            <span id="score-range-value">500</span> 分
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="filter-btn" class="filter-btn">
+                    <i class="fas fa-filter"></i> 筛选学校
+                </button>
+            </div>
+            
+            <!-- 学校列表 -->
+            <div class="schools-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="high-school">
+                        <i class="fas fa-university"></i> 普通高中
+                    </button>
+                    <button class="tab-btn" data-tab="vocational">
+                        <i class="fas fa-tools"></i> 中专/职高
+                    </button>
+                    <button class="tab-btn" data-tab="tech">
+                        <i class="fas fa-cogs"></i> 技工学校
+                    </button>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- 普通高中 -->
+                    <div class="tab-pane active" id="high-school-tab">
+                        <div class="schools-grid">
+                            <!-- 学校卡片将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 中专/职高 -->
+                    <div class="tab-pane" id="vocational-tab">
+                        <div class="schools-grid">
+                            <!-- 学校卡片将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 技工学校 -->
+                    <div class="tab-pane" id="tech-tab">
+                        <div class="schools-grid">
+                            <!-- 学校卡片将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学校详情模态框 -->
+            <div id="school-modal" class="school-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modal-title"></h3>
+                        <button class="modal-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 详情内容将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 简洁页脚 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">惠州中考择校指南</span>
+                    <p class="footer-desc">为惠州中考毕业生提供专业的教育路径选择指导</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home">首页</a>
+                    <a href="#choices">选择路径</a>
+                    <a href="#compare">对比分析</a>
+                    <a href="#screening">智能筛选</a>
+                    <a href="#schools">惠州学校</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <p><i class="fas fa-info-circle"></i> 本指南仅供参考</p>
+                    <p><i class="fas fa-exclamation-triangle"></i> 具体选择请咨询学校和教育部门</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 惠州中考择校指南 | 用心为每一位学生服务</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
