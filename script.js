@@ -670,6 +670,7 @@ function useDefaultSchoolsData() {
                 disadvantages: ["学习压力较大", "录取分数要求高"],
                 specialties: [{ name: "理科实验班", description: "重点培养理工科人才" }],
                 contact: { address: "惠州市惠城区南坛路28号", phone: "0752-2234567" },
+                ownership: "公立",
                 ranking: 1
             }
         ],
@@ -686,6 +687,7 @@ function useDefaultSchoolsData() {
                 disadvantages: ["理论学习相对较少"],
                 specialties: [{ name: "机电技术应用", description: "培养机电设备维修技术人员" }],
                 contact: { address: "惠州市惠城区马安镇", phone: "0752-2234777" },
+                ownership: "公立",
                 ranking: 1
             }
         ],
@@ -702,6 +704,7 @@ function useDefaultSchoolsData() {
                 disadvantages: ["工作环境可能较艰苦"],
                 specialties: [{ name: "模具制造", description: "模具设计、制造、维修" }],
                 contact: { address: "惠州市惠城区马安镇", phone: "0752-2234222" },
+                ownership: "公立",
                 ranking: 1
             }
         ]
