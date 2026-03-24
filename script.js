@@ -608,23 +608,22 @@ function initSchoolFilter() {
 function loadSchoolsData() {
     console.log('loadSchoolsData() 开始执行');
     
-    // 直接检查数据是否已加载
-    if (typeof huizhouSchools !== 'undefined') {
-        console.log('学校数据已加载，开始显示学校');
-        // 初始显示所有学校
-        displaySchoolsByType('high-school');
-        displaySchoolsByType('vocational');
-        displaySchoolsByType('technical');
-        console.log('学校显示完成');
-    } else {
-        console.error('学校数据未加载，使用默认数据');
-        // 使用默认数据
-        useDefaultSchoolsData();
-        // 使用默认数据后显示学校
-        displaySchoolsByType('high-school');
-        displaySchoolsByType('vocational');
-        displaySchoolsByType('technical');
+    // 检查数据是否已加载
+    if (typeof huizhouSchools === 'undefined') {
+        console.error('错误：学校数据未加载！');
+        return;
     }
+    
+    console.log('学校数据已加载，开始显示学校');
+    console.log('高中数量:', huizhouSchools.highSchools ? huizhouSchools.highSchools.length : 0);
+    console.log('中专/职高数量:', huizhouSchools.vocationalSchools ? huizhouSchools.vocationalSchools.length : 0);
+    console.log('技工学校数量:', huizhouSchools.technicalSchools ? huizhouSchools.technicalSchools.length : 0);
+    
+    // 初始显示所有学校
+    displaySchoolsByType('high-school');
+    displaySchoolsByType('vocational');
+    displaySchoolsByType('technical');
+    console.log('学校显示完成');
 }
 
 // 使用默认学校数据
