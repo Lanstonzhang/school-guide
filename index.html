@@ -511,6 +511,33 @@
     </footer>
 
     <script src="schools-data.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // 确保 schools-data.js 加载完成后再执行主脚本
+        if (typeof huizhouSchools !== 'undefined') {
+            // 数据已加载，直接加载主脚本
+            const script = document.createElement('script');
+            script.src = 'script.js';
+            document.head.appendChild(script);
+        } else {
+            // 数据未加载，等待后再加载主脚本
+            const checkInterval = setInterval(() => {
+                if (typeof huizhouSchools !== 'undefined') {
+                    clearInterval(checkInterval);
+                    const script = document.createElement('script');
+                    script.src = 'script.js';
+                    document.head.appendChild(script);
+                }
+            }, 100);
+            
+            // 5秒后超时
+            setTimeout(() => {
+                clearInterval(checkInterval);
+                console.error('加载学校数据超时');
+                const script = document.createElement('script');
+                script.src = 'script.js';
+                document.head.appendChild(script);
+            }, 5000);
+        }
+    </script>
 </body>
 </html>

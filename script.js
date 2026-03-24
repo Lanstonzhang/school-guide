@@ -606,51 +606,24 @@ function initSchoolFilter() {
 
 // 加载学校数据
 function loadSchoolsData() {
-    // 加载学校数据文件
-    loadSchoolsDataFile().then(() => {
+    console.log('loadSchoolsData() 开始执行');
+    
+    // 直接检查数据是否已加载
+    if (typeof huizhouSchools !== 'undefined') {
+        console.log('学校数据已加载，开始显示学校');
         // 初始显示所有学校
         displaySchoolsByType('high-school');
         displaySchoolsByType('vocational');
         displaySchoolsByType('technical');
-    }).catch(error => {
-        console.error('加载学校数据失败:', error);
+        console.log('学校显示完成');
+    } else {
+        console.error('学校数据未加载，使用默认数据');
         // 使用默认数据
         useDefaultSchoolsData();
-    });
-}
-
-// 加载学校数据文件
-async function loadSchoolsDataFile() {
-    try {
-        // 动态加载学校数据文件
-        if (typeof huizhouSchools === 'undefined') {
-            const script = document.createElement('script');
-            script.src = 'schools-data.js';
-            script.onload = () => {
-                console.log('学校数据加载成功');
-            };
-            script.onerror = () => {
-                throw new Error('无法加载学校数据文件');
-            };
-            document.head.appendChild(script);
-            
-            // 等待数据加载
-            await new Promise((resolve, reject) => {
-                const checkInterval = setInterval(() => {
-                    if (typeof huizhouSchools !== 'undefined') {
-                        clearInterval(checkInterval);
-                        resolve();
-                    }
-                }, 100);
-                
-                setTimeout(() => {
-                    clearInterval(checkInterval);
-                    reject(new Error('学校数据加载超时'));
-                }, 5000);
-            });
-        }
-    } catch (error) {
-        throw error;
+        // 使用默认数据后显示学校
+        displaySchoolsByType('high-school');
+        displaySchoolsByType('vocational');
+        displaySchoolsByType('technical');
     }
 }
 
@@ -764,6 +737,13 @@ function clearSchoolDisplay() {
 
 // 按类型显示学校
 function displaySchoolsByType(type) {
+    console.log(`displaySchoolsByType('${type}') 开始执行`);
+    
+    if (typeof huizhouSchools === 'undefined') {
+        console.error('huizhouSchools 未定义，无法显示学校');
+        return;
+    }
+    
     let schools = [];
     let containerId = '';
     
@@ -771,15 +751,22 @@ function displaySchoolsByType(type) {
         case 'high-school':
             schools = huizhouSchools.highSchools;
             containerId = 'high-school-tab';
+            console.log(`高中数量: ${schools.length}`);
             break;
         case 'vocational':
             schools = huizhouSchools.vocationalSchools;
             containerId = 'vocational-tab';
+            console.log(`职业学校数量: ${schools.length}`);
             break;
         case 'technical':
             schools = huizhouSchools.technicalSchools;
             containerId = 'tech-tab';
+            console.log(`技工学校数量: ${schools.length}`);
             break;
+    }
+    
+    if (schools.length === 0) {
+        console.warn(`没有找到 ${type} 类型的学校`);
     }
     
     displaySchools(schools, type);
@@ -859,7 +846,7 @@ function createSchoolCard(school, type) {
             </div>
         </div>
         <div class="school-card-footer">
-            <button class="view-details-btn" onclick="showSchoolDetails('${type}', ${school.id})">
+            <button class="view-details-btn" data-school-type="${type}" data-school-id="${school.id}">
                 <i class="fas fa-info-circle"></i> 查看详情
             </button>
         </div>
@@ -1078,4 +1065,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (modalCloseBtn) {
         modalCloseBtn.addEventListener('click', closeSchoolModal);
     }
+    
+    // 为学校卡片详情按钮添加事件委托
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.view-details-btn')) {
+            const button = e.target.closest('.view-details-btn');
+            const type = button.getAttribute('data-school-type');
+            const id = parseInt(button.getAttribute('data-school-id'));
+            
+            if (type && id) {
+                showSchoolDetails(type, id);
+            }
+        }
+    });
 });
