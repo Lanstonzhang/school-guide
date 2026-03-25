@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>快速测试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .result { margin: 10px; padding: 10px; border: 1px solid #ccc; }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <h1>学校数据快速测试</h1>
+    
+    <div class="result" id="status">测试中...</div>
+    <div class="result" id="data">加载数据...</div>
+    
+    <script>
+        // 加载学校数据
+        const script = document.createElement('script');
+        script.src = 'https://lanstonzhang.github.io/school-guide/schools-data.js';
+        script.onload = function() {
+            if (typeof huizhouSchools !== 'undefined') {
+                const highCount = huizhouSchools.highSchools ? huizhouSchools.highSchools.length : 0;
+                const vocationalCount = huizhouSchools.vocationalSchools ? huizhouSchools.vocationalSchools.length : 0;
+                const technicalCount = huizhouSchools.technicalSchools ? huizhouSchools.technicalSchools.length : 0;
+                const total = highCount + vocationalCount + technicalCount;
+                
+                document.getElementById('status').className = 'result success';
+                document.getElementById('status').innerHTML = `✅ 数据加载成功！`;
+                
+                document.getElementById('data').innerHTML = `
+                    <h3>学校统计：</h3>
+                    <p>高中：${highCount} 所</p>
+                    <p>中专/职高：${vocationalCount} 所</p>
+                    <p>技工学校：${technicalCount} 所</p>
+                    <p><strong>总计：${total} 所学校</strong></p>
+                `;
+                
+                if (total > 1) {
+                    document.getElementById('data').className = 'result success';
+                } else {
+                    document.getElementById('data').className = 'result error';
+                    document.getElementById('data').innerHTML += `<p style="color:red">⚠️ 只找到1所学校，数据可能不完整</p>`;
+                }
+            } else {
+                document.getElementById('status').className = 'result error';
+                document.getElementById('status').innerHTML = '❌ 数据加载失败';
+            }
+        };
+        
+        script.onerror = function() {
+            document.getElementById('status').className = 'result error';
+            document.getElementById('status').innerHTML = '❌ 无法加载数据文件';
+        };
+        
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
