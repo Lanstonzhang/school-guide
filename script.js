@@ -610,8 +610,8 @@ function loadSchoolsData() {
     
     // 检查数据是否已加载
     if (typeof huizhouSchools === 'undefined') {
-        console.error('错误：学校数据未加载！');
-        return;
+        console.error('错误：学校数据未加载！使用默认数据...');
+        useDefaultSchoolsData();
     }
     
     console.log('学校数据已加载，开始显示学校');

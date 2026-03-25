@@ -40,9 +40,8 @@ const huizhouSchools = {
                 phone: "0752-2234567",
                 website: "http://www.hz1z.edu.cn"
             },
-                        ownership: "公立",
-            ranking: 1,
-            ownership: "公立"
+            ownership: "公立",
+            ranking: 1
         },
         {
             id: 2,
