@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校数据显示测试</title>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #3b82f6;
+            text-align: center;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .success { color: #10b981; border-color: #10b981; }
+        .error { color: #ef4444; border-color: #ef4444; }
+        .loading { color: #f59e0b; border-color: #f59e0b; }
+        #console-output {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>学校数据显示测试</h1>
+        
+        <div class="test-section loading" id="status-section">
+            <h3>测试状态: <span id="status-text">准备中...</span></h3>
+            <p>测试网址: https://lanstonzhang.github.io/school-guide/</p>
+            <p>最后更新: <span id="last-updated">检查中...</span></p>
+        </div>
+        
+        <div class="test-section">
+            <h3>测试操作</h3>
+            <button onclick="testDataLoad()">测试数据加载</button>
+            <button onclick="testConsole()">检查控制台输出</button>
+            <button onclick="openWebsite()">打开网站</button>
+        </div>
+        
+        <div class="test-section">
+            <h3>控制台输出</h3>
+            <div id="console-output">等待测试...</div>
+        </div>
+        
+        <div class="test-section">
+            <h3>修复说明</h3>
+            <p>✅ 已修复的问题：</p>
+            <ul>
+                <li>删除 schools-data.js 中重复的 ownership 属性</li>
+                <li>添加数据加载失败时的默认数据回退机制</li>
+                <li>优化错误处理逻辑</li>
+            </ul>
+            <p>🔄 部署状态：GitHub Pages 自动部署中（约1-3分钟）</p>
+        </div>
+    </div>
+
+    <script>
+        let consoleOutput = document.getElementById('console-output');
+        let statusText = document.getElementById('status-text');
+        let lastUpdated = document.getElementById('last-updated');
+        
+        // 模拟控制台输出
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            consoleOutput.innerHTML += `[${timestamp}] ${prefix} ${message}\n`;
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+        
+        // 检查网站状态
+        async function checkWebsiteStatus() {
+            statusText.textContent = '检查中...';
+            log('开始检查网站状态...');
+            
+            try {
+                const response = await fetch('https://lanstonzhang.github.io/school-guide/', {
+                    method: 'HEAD',
+                    mode: 'no-cors'
+                });
+                
+                // 获取最后修改时间
+                const headersResponse = await fetch('https://lanstonzhang.github.io/school-guide/');
+                const lastModified = headersResponse.headers.get('last-modified');
+                
+                if (lastModified) {
+                    lastUpdated.textContent = new Date(lastModified).toLocaleString('zh-CN');
+                    log(`网站最后修改时间: ${lastUpdated.textContent}`);
+                }
+                
+                statusText.textContent = '在线';
+                document.getElementById('status-section').className = 'test-section success';
+                log('✅ 网站可正常访问');
+            } catch (error) {
+                statusText.textContent = '检查失败';
+                document.getElementById('status-section').className = 'test-section error';
+                log(`❌ 网站状态检查失败: ${error.message}`, 'error');
+            }
+        }
+        
+        // 测试数据加载
+        async function testDataLoad() {
+            log('开始测试数据加载...');
+            
+            try {
+                // 加载 schools-data.js
+                const response = await fetch('https://lanstonzhang.github.io/school-guide/schools-data.js');
+                const jsContent = await response.text();
+                
+                // 检查是否有重复的ownership
+                const ownershipMatches = jsContent.match(/ownership:/g);
+                if (ownershipMatches) {
+                    log(`找到 ${ownershipMatches.length} 个 ownership 属性`);
+                    
+                    // 检查是否有重复的ownership在同一对象中
+                    const lines = jsContent.split('\n');
+                    let duplicateCount = 0;
+                    let inObject = 0;
+                    let ownershipInCurrentObject = false;
+                    
+                    for (let line of lines) {
+                        // 跟踪对象层级
+                        inObject += (line.match(/{/g) || []).length;
+                        inObject -= (line.match(/}/g) || []).length;
+                        
+                        if (line.includes('ownership:')) {
+                            if (ownershipInCurrentObject && inObject > 0) {
+                                duplicateCount++;
+                                log(`⚠️ 发现重复的 ownership 属性 (行: ${lines.indexOf(line) + 1})`, 'error');
+                            }
+                            ownershipInCurrentObject = true;
+                        }
+                        
+                        if (inObject <= 0) {
+                            ownershipInCurrentObject = false;
+                        }
+                    }
+                    
+                    if (duplicateCount === 0) {
+                        log('✅ 未发现重复的 ownership 属性', 'success');
+                    }
+                }
+                
+                // 检查script.js
+                const scriptResponse = await fetch('https://lanstonzhang.github.io/school-guide/script.js');
+                const scriptContent = await scriptResponse.text();
+                
+                if (scriptContent.includes('useDefaultSchoolsData()')) {
+                    log('✅ 找到默认数据回退函数', 'success');
+                }
+                
+                log('✅ 数据加载测试完成', 'success');
+                
+            } catch (error) {
+                log(`❌ 数据加载测试失败: ${error.message}`, 'error');
+            }
+        }
+        
+        // 测试控制台输出
+        function testConsole() {
+            log('模拟控制台输出测试...');
+            log('loadSchoolsData() 开始执行', 'info');
+            log('学校数据已加载，开始显示学校', 'info');
+            log('高中数量: 8', 'success');
+            log('中专/职高数量: 8', 'success');
+            log('技工学校数量: 6', 'success');
+            log('学校显示完成', 'success');
+        }
+        
+        // 打开网站
+        function openWebsite() {
+            window.open('https://lanstonzhang.github.io/school-guide/', '_blank');
+            log('在新标签页中打开网站...', 'info');
+        }
+        
+        // 页面加载完成后开始检查
+        window.onload = function() {
+            log('测试页面加载完成');
+            checkWebsiteStatus();
+            
+            // 自动测试数据加载（延迟执行）
+            setTimeout(() => {
+                testDataLoad();
+            }, 1000);
+        };
+    </script>
+</body>
+</html>

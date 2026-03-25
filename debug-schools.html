@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校数据调试</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+        .warning { background: #fff3cd; }
+        pre { background: #f8f9fa; padding: 10px; overflow: auto; }
+    </style>
+</head>
+<body>
+    <h1>学校数据调试页面</h1>
+    
+    <div class="section">
+        <h2>1. 加载学校数据</h2>
+        <button onclick="loadAndCheckData()">加载并检查数据</button>
+        <div id="data-status">等待加载...</div>
+    </div>
+    
+    <div class="section">
+        <h2>2. 学校数量统计</h2>
+        <div id="school-counts">未统计</div>
+    </div>
+    
+    <div class="section">
+        <h2>3. 学校列表</h2>
+        <div id="school-list">未加载</div>
+    </div>
+    
+    <div class="section">
+        <h2>4. 控制台输出</h2>
+        <pre id="console-output"></pre>
+    </div>
+
+    <!-- 加载学校数据 -->
+    <script src="schools-data.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        const consoleOutput = document.getElementById('console-output');
+        
+        function log(message) {
+            consoleOutput.textContent += message + '\n';
+            console.log(message);
+        }
+        
+        function loadAndCheckData() {
+            log('开始加载学校数据...');
+            
+            // 检查数据是否加载
+            if (typeof huizhouSchools === 'undefined') {
+                log('❌ huizhouSchools 未定义');
+                document.getElementById('data-status').innerHTML = '<span style="color:red">数据未加载</span>';
+                return;
+            }
+            
+            log('✅ huizhouSchools 已加载');
+            document.getElementById('data-status').innerHTML = '<span style="color:green">数据加载成功</span>';
+            
+            // 统计学校数量
+            const highCount = huizhouSchools.highSchools ? huizhouSchools.highSchools.length : 0;
+            const vocationalCount = huizhouSchools.vocationalSchools ? huizhouSchools.vocationalSchools.length : 0;
+            const technicalCount = huizhouSchools.technicalSchools ? huizhouSchools.technicalSchools.length : 0;
+            const total = highCount + vocationalCount + technicalCount;
+            
+            log(`高中数量: ${highCount}`);
+            log(`中专/职高数量: ${vocationalCount}`);
+            log(`技工学校数量: ${technicalCount}`);
+            log(`总计: ${total} 所学校`);
+            
+            document.getElementById('school-counts').innerHTML = `
+                <p>高中: ${highCount} 所</p>
+                <p>中专/职高: ${vocationalCount} 所</p>
+                <p>技工学校: ${technicalCount} 所</p>
+                <p><strong>总计: ${total} 所学校</strong></p>
+            `;
+            
+            // 显示学校列表
+            let schoolListHTML = '<h3>高中列表:</h3>';
+            if (highCount > 0) {
+                huizhouSchools.highSchools.forEach(school => {
+                    schoolListHTML += `<p>${school.id}. ${school.name} (${school.type}) - ${school.location}</p>`;
+                });
+            } else {
+                schoolListHTML += '<p>无数据</p>';
+            }
+            
+            schoolListHTML += '<h3>中专/职高列表:</h3>';
+            if (vocationalCount > 0) {
+                huizhouSchools.vocationalSchools.forEach(school => {
+                    schoolListHTML += `<p>${school.id}. ${school.name} (${school.type}) - ${school.location}</p>`;
+                });
+            } else {
+                schoolListHTML += '<p>无数据</p>';
+            }
+            
+            schoolListHTML += '<h3>技工学校列表:</h3>';
+            if (technicalCount > 0) {
+                huizhouSchools.technicalSchools.forEach(school => {
+                    schoolListHTML += `<p>${school.id}. ${school.name} (${school.type}) - ${school.location}</p>`;
+                });
+            } else {
+                schoolListHTML += '<p>无数据</p>';
+            }
+            
+            document.getElementById('school-list').innerHTML = schoolListHTML;
+            
+            // 测试显示函数
+            log('测试 displaySchoolsByType 函数...');
+            try {
+                displaySchoolsByType('high-school');
+                displaySchoolsByType('vocational');
+                displaySchoolsByType('technical');
+                log('✅ 显示函数测试完成');
+            } catch (error) {
+                log(`❌ 显示函数错误: ${error.message}`);
+            }
+        }
+        
+        // 页面加载后自动检查
+        window.onload = function() {
+            log('页面加载完成');
+            setTimeout(loadAndCheckData, 1000);
+        };
+    </script>
+</body>
+</html>
