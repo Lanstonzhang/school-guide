@@ -759,4 +759,5 @@ if (typeof module !== 'undefined' && module.exports) {
         getSchoolDetails,
         getSchoolsByLocation
     };
-}
+}// 兼容性修复：创建 schools 变量
+const schools = huizhouSchools;
