@@ -759,5 +759,9 @@ if (typeof module !== 'undefined' && module.exports) {
         getSchoolDetails,
         getSchoolsByLocation
     };
-}// 兼容性修复：创建 schools 变量
-const schools = huizhouSchools;
+// 兼容性修复：创建 schools 变量
+const schools = {
+    highSchools: huizhouSchools.highSchools || [],
+    vocationalSchools: huizhouSchools.vocationalSchools || [],
+    technicalSchools: huizhouSchools.technicalSchools || []
+};
